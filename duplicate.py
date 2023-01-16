@@ -25,3 +25,38 @@ class Solution(object):
         :rtype: bool
         """
         
+        
+        '''the least memory used and accepted answer was this'''
+  class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        
+        nums.sort()
+        for i in range(0,len(nums)-1):
+            if nums[i] == nums[i+1]:
+                return True
+        return False;
+    
+    
+    '''accepted solution that took the least time '''
+    class Solution(object):
+        def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+            hashNum={}
+            for i in nums:
+                if i not in hashNum:
+                    hashNum[i] = 1
+                else:
+                    return True
+                
+            return False
+
+        #Dictionarry are musch faster as compaired to list, they are lookup, while list are iteration
+        #when compairing about space, dictinary occupies ore space hence list becomes best options
+        
