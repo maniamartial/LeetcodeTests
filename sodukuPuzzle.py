@@ -66,30 +66,28 @@ class Solution(object):
                     grid.add(g)
         return True
       
-      #best space complexity
-      
+        
+        
+ #best space complexity
  class Solution(object):
     def isValidSudoku(self, board):
-        """
-        :type board: List[List[str]]
-        :rtype: bool
-        """
-        return (self.isRowValid(board) and
-                 self.isColValid(board) and 
-                 self.isSqValid(board) )
+           return (self.isRowValid(board) and self.isColValid(board) and self.isSqValid(board) )
     
+    #Here we confirm if they are meeting the goal of all rows. Is the number equal using the function of isUnitValid
     def isRowValid(self,board):
         for row in board:
             if not self.isUnitValid(row):
                 return False
         return True
 
+    #Here we confirm if there is repetition using the function of isUnitValid
     def isColValid(self,board):
         for col in zip(*board):
             if not self.isUnitValid(col):
                 return False
         return True
-
+    
+#not sure what the code is looking for
     def isSqValid(self,board):
         for i in (0,3,6):
             for j in (0,3,6):
@@ -100,6 +98,7 @@ class Solution(object):
                     return False
         return True
 
+    #checking if the length of digit is equal to length(after removal of repetition). In this case they have subtracted the spaces
     def isUnitValid(self,unit):
         unit = [i for i in unit if i !='.']
         return len(set(unit)) == len(unit)
